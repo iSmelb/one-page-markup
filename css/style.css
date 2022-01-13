@@ -1,0 +1,605 @@
+@font-face {
+  font-family: "LatoSemiBold";
+  src: url("../fonts/Lato_semibold/Lato-Semibold.woff") format("woff"), url("../fonts/Lato_semibold/Lato-Semibold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 11, ../../all lessons/lesson12/scss/style.scss */
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+}
+
+/* line 16, ../../all lessons/lesson12/scss/style.scss */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 320px;
+  overflow: hidden;
+}
+
+/* line 24, ../../all lessons/lesson12/scss/style.scss */
+.main {
+  flex-grow: 1;
+}
+
+/* line 28, ../../all lessons/lesson12/scss/style.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 32, ../../all lessons/lesson12/scss/style.scss */
+.center {
+  max-width: 1140px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* line 38, ../../all lessons/lesson12/scss/style.scss */
+h1 {
+  text-transform: uppercase;
+  font-size: 36px;
+  font-family: 'Lato',sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+/* line 46, ../../all lessons/lesson12/scss/style.scss */
+h2 {
+  text-align: center;
+  font-size: 36px;
+  font-family: "LatoSemiBold", sans-serif;
+}
+
+/* line 52, ../../all lessons/lesson12/scss/style.scss */
+h3,
+h4 {
+  font-weight: bold;
+}
+
+/* line 60, ../../all lessons/lesson12/scss/style.scss */
+.nav_list a::before,
+.footer a::before,
+.card_text a::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-radius: 6px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/* line 76, ../../all lessons/lesson12/scss/style.scss */
+.nav_list a::after,
+.footer a::after,
+.card_text a::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-right: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-radius: 6px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 89, ../../all lessons/lesson12/scss/style.scss */
+a:hover::after,
+a:hover::before {
+  width: 100%;
+  height: 100%;
+  border-color: inherit;
+  transition: all 0.3s linear;
+}
+
+/* line 98, ../../all lessons/lesson12/scss/style.scss */
+.header {
+  padding-top: 33px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+}
+
+/* line 106, ../../all lessons/lesson12/scss/style.scss */
+.header a {
+  color: inherit;
+}
+
+/* line 111, ../../all lessons/lesson12/scss/style.scss */
+.header_up {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* line 119, ../../all lessons/lesson12/scss/style.scss */
+.nav_header {
+  order: 1;
+}
+
+/* line 123, ../../all lessons/lesson12/scss/style.scss */
+.nav_list {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  padding-top: 80px;
+  color: white;
+  background: #0195aef5;
+  width: 100%;
+  font-size: 21px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* line 139, ../../all lessons/lesson12/scss/style.scss */
+.nav_list a {
+  padding: 5px;
+  display: block;
+  position: relative;
+}
+
+/* line 146, ../../all lessons/lesson12/scss/style.scss */
+.active_li_nav {
+  border-bottom: 1px solid;
+  pointer-events: none;
+}
+
+/* line 151, ../../all lessons/lesson12/scss/style.scss */
+label {
+  display: flex;
+  flex-direction: column;
+  width: 44px;
+  order: 1;
+  position: relative;
+  z-index: 11;
+}
+
+/* line 159, ../../all lessons/lesson12/scss/style.scss */
+label span {
+  background: #fff;
+  border-radius: 10px;
+  height: 3px;
+  margin: 4px 0;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+/* line 167, ../../all lessons/lesson12/scss/style.scss */
+label span:nth-of-type(1) {
+  width: 50%;
+}
+
+/* line 171, ../../all lessons/lesson12/scss/style.scss */
+label span:nth-of-type(2) {
+  width: 90%;
+}
+
+/* line 175, ../../all lessons/lesson12/scss/style.scss */
+label span:nth-of-type(3) {
+  width: 70%;
+}
+
+/* line 180, ../../all lessons/lesson12/scss/style.scss */
+#burger_nav {
+  display: none;
+}
+
+/* line 184, ../../all lessons/lesson12/scss/style.scss */
+#burger_nav:checked ~ .burger span:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotatez(45deg) translate(3px, 0px);
+}
+
+/* line 189, ../../all lessons/lesson12/scss/style.scss */
+#burger_nav:checked ~ .burger span:nth-of-type(2) {
+  transform-origin: top;
+  transform: rotatez(-45deg);
+}
+
+/* line 194, ../../all lessons/lesson12/scss/style.scss */
+#burger_nav:checked ~ .burger span:nth-of-type(3) {
+  transform-origin: bottom;
+  width: 50%;
+  transform: translate(16px, -6px) rotatez(45deg);
+}
+
+/* line 200, ../../all lessons/lesson12/scss/style.scss */
+#burger_nav:checked ~ .nav_list {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s linear;
+}
+
+/* line 206, ../../all lessons/lesson12/scss/style.scss */
+.login {
+  padding: 7px 13px;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  position: absolute;
+  left: calc(100% - 130px);
+  top: 0;
+}
+
+/* line 215, ../../all lessons/lesson12/scss/style.scss */
+.login:hover {
+  background-color: #fff;
+  color: #ed4c5c;
+}
+
+/* line 222, ../../all lessons/lesson12/scss/style.scss */
+.banner_bg {
+  height: 100vh;
+  background: linear-gradient(90deg, rgba(213, 32, 71, 0.8) 0%, rgba(238, 61, 27, 0.8) 100%), url("../images/banner.jpg") no-repeat center;
+  background-size: cover;
+}
+
+/* line 228, ../../all lessons/lesson12/scss/style.scss */
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  line-height: 1.5;
+  font-family: "LatoSemiBold" , sans-serif;
+}
+
+/* line 239, ../../all lessons/lesson12/scss/style.scss */
+.banner_text p {
+  margin-bottom: 30px;
+}
+
+/* line 243, ../../all lessons/lesson12/scss/style.scss */
+.banner_button {
+  padding: 12px 40px;
+  border-radius: 6px;
+  color: #ed4c5c;
+  background-color: #fff;
+  text-transform: uppercase;
+}
+
+/* line 251, ../../all lessons/lesson12/scss/style.scss */
+.banner_button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+/* line 258, ../../all lessons/lesson12/scss/style.scss */
+.features {
+  padding: 35px 0 40px;
+  background: #FAFAFA;
+}
+
+/* line 262, ../../all lessons/lesson12/scss/style.scss */
+.features h2 {
+  margin-bottom: 30px;
+}
+
+/* line 267, ../../all lessons/lesson12/scss/style.scss */
+.card {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* line 272, ../../all lessons/lesson12/scss/style.scss */
+.card:last-child {
+  margin-bottom: 0;
+}
+
+/* line 276, ../../all lessons/lesson12/scss/style.scss */
+.img_card {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 281, ../../all lessons/lesson12/scss/style.scss */
+.card_text {
+  background: #FFFFFF;
+  display: flex;
+  padding: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 270px;
+  margin: -85px auto 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 295, ../../all lessons/lesson12/scss/style.scss */
+.card_text h3 {
+  font-size: 18px;
+}
+
+/* line 299, ../../all lessons/lesson12/scss/style.scss */
+.card_text a {
+  font-weight: bold;
+  color: #ed4c5c;
+  display: block;
+  padding: 5px;
+  position: relative;
+}
+
+/* line 310, ../../all lessons/lesson12/scss/style.scss */
+.technology {
+  padding: 35px 0 40px;
+}
+
+/* line 313, ../../all lessons/lesson12/scss/style.scss */
+.technology h2 {
+  margin-bottom: 30px;
+}
+
+/* line 318, ../../all lessons/lesson12/scss/style.scss */
+.block_number {
+  text-align: center;
+  padding: 0 40px;
+}
+
+/* line 322, ../../all lessons/lesson12/scss/style.scss */
+.block_number span {
+  font-size: 100px;
+  color: rgba(16, 16, 16, 0.08);
+}
+
+/* line 327, ../../all lessons/lesson12/scss/style.scss */
+.block_number a {
+  display: block;
+}
+
+/* line 329, ../../all lessons/lesson12/scss/style.scss */
+.block_number a img {
+  margin-top: -50%;
+}
+
+/* line 334, ../../all lessons/lesson12/scss/style.scss */
+.block_number h3 {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+/* line 342, ../../all lessons/lesson12/scss/style.scss */
+.footer {
+  background-color: #FAFAFA;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* line 347, ../../all lessons/lesson12/scss/style.scss */
+.footer h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* line 354, ../../all lessons/lesson12/scss/style.scss */
+.under_menu a {
+  color: inherit;
+  padding: 5px;
+  position: relative;
+}
+
+/* line 360, ../../all lessons/lesson12/scss/style.scss */
+.under_menu li {
+  margin-bottom: 10px;
+}
+
+/* line 365, ../../all lessons/lesson12/scss/style.scss */
+li.icons a {
+  margin-right: 7px;
+}
+
+/* line 369, ../../all lessons/lesson12/scss/style.scss */
+li.icons a:last-child {
+  margin-right: 0;
+}
+
+/* line 373, ../../all lessons/lesson12/scss/style.scss */
+.menu_un_block {
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 378, ../../all lessons/lesson12/scss/style.scss */
+.menu_un_block address {
+  font-style: normal;
+}
+
+/* line 383, ../../all lessons/lesson12/scss/style.scss */
+div.menu_un_block:first-child {
+  width: 100%;
+}
+
+/* line 387, ../../all lessons/lesson12/scss/style.scss */
+.copyright {
+  width: 100%;
+}
+
+/* line 389, ../../all lessons/lesson12/scss/style.scss */
+.copyright p {
+  margin: 20px 0 0;
+}
+
+@media (min-width: 380px) {
+  /* line 395, ../../all lessons/lesson12/scss/style.scss */
+  .card_text {
+    width: 293px;
+  }
+}
+
+@media (min-width: 480px) {
+  /* line 401, ../../all lessons/lesson12/scss/style.scss */
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  /* line 406, ../../all lessons/lesson12/scss/style.scss */
+  .cards h2 {
+    width: 100%;
+  }
+  /* line 410, ../../all lessons/lesson12/scss/style.scss */
+  .card {
+    margin: 0 5px 40px;
+  }
+  /* line 413, ../../all lessons/lesson12/scss/style.scss */
+  .card:last-child {
+    margin-bottom: 0;
+  }
+  /* line 417, ../../all lessons/lesson12/scss/style.scss */
+  .technology_card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  /* line 422, ../../all lessons/lesson12/scss/style.scss */
+  .technology_card h2 {
+    width: 100%;
+  }
+  /* line 427, ../../all lessons/lesson12/scss/style.scss */
+  .block_number {
+    width: 50%;
+  }
+  /* line 431, ../../all lessons/lesson12/scss/style.scss */
+  .footer {
+    text-align: left;
+  }
+  /* line 435, ../../all lessons/lesson12/scss/style.scss */
+  .under_menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  /* line 441, ../../all lessons/lesson12/scss/style.scss */
+  .menu_un_block {
+    border-bottom: none;
+    padding: 10px;
+  }
+  /* line 445, ../../all lessons/lesson12/scss/style.scss */
+  .menu_un_block ul {
+    margin-left: -5px;
+  }
+}
+
+@media (min-width: 810px) {
+  /* line 453, ../../all lessons/lesson12/scss/style.scss */
+  .nav_header {
+    order: 0;
+  }
+  /* line 457, ../../all lessons/lesson12/scss/style.scss */
+  .login {
+    padding: 12px 28px;
+    position: static;
+  }
+  /* line 462, ../../all lessons/lesson12/scss/style.scss */
+  .nav_list {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s linear;
+    position: static;
+    padding-top: 0;
+    color: white;
+    background: none;
+    width: auto;
+    display: flex;
+    font-size: 14px;
+  }
+  /* line 475, ../../all lessons/lesson12/scss/style.scss */
+  label {
+    display: none;
+  }
+  /* line 479, ../../all lessons/lesson12/scss/style.scss */
+  .nav_list > li {
+    margin: 0 10px;
+  }
+  /* line 483, ../../all lessons/lesson12/scss/style.scss */
+  div.menu_un_block:first-child {
+    width: 215px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* line 489, ../../all lessons/lesson12/scss/style.scss */
+  body {
+    font-size: 14px;
+  }
+  /* line 493, ../../all lessons/lesson12/scss/style.scss */
+  h1 {
+    font-size: 72px;
+  }
+  /* line 497, ../../all lessons/lesson12/scss/style.scss */
+  .nav_list > li {
+    margin: 0 15px;
+  }
+  /* line 501, ../../all lessons/lesson12/scss/style.scss */
+  .banner {
+    font-size: 24px;
+  }
+  /* line 505, ../../all lessons/lesson12/scss/style.scss */
+  .banner_button {
+    font-size: 14px;
+    padding: 17px 53px;
+  }
+  /* line 510, ../../all lessons/lesson12/scss/style.scss */
+  .banner_text {
+    width: 578px;
+  }
+  /* line 512, ../../all lessons/lesson12/scss/style.scss */
+  .banner_text p {
+    margin-bottom: 56px;
+  }
+  /* line 517, ../../all lessons/lesson12/scss/style.scss */
+  .features {
+    font-size: 12px;
+    padding: 63px 0 124px;
+  }
+  /* line 520, ../../all lessons/lesson12/scss/style.scss */
+  .features h2 {
+    margin-bottom: 63px;
+  }
+  /* line 525, ../../all lessons/lesson12/scss/style.scss */
+  .technology {
+    font-size: 12px;
+    padding: 63px 0 104px;
+  }
+  /* line 529, ../../all lessons/lesson12/scss/style.scss */
+  .technology h2 {
+    margin-bottom: 52px;
+  }
+  /* line 534, ../../all lessons/lesson12/scss/style.scss */
+  .block_number {
+    max-width: 255px;
+    padding: 0 30px 0 34px;
+  }
+  /* line 539, ../../all lessons/lesson12/scss/style.scss */
+  .footer {
+    font-size: 12px;
+    padding: 85px 0;
+  }
+  /* line 544, ../../all lessons/lesson12/scss/style.scss */
+  .under_menu {
+    justify-content: space-between;
+  }
+  /* line 548, ../../all lessons/lesson12/scss/style.scss */
+  .menu_un_block {
+    margin-bottom: 86px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
